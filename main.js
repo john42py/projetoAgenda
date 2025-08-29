@@ -1,11 +1,10 @@
 const formul = document.getElementById('agenda-tel');
 const nomeCont = [];
 const numeroCont = [];
-
 let linhatr = '';
+let  quantContato;
 formul.addEventListener('submit', function(e) {
     e.preventDefault();
-
     adicionarContato();
     atualizarAgenda();
 
@@ -38,4 +37,6 @@ function adicionarContato() {
 function atualizarAgenda() {
     const corpoAgenda = document.querySelector('tbody');
     corpoAgenda.innerHTML = linhatr;
+    quantContato = nomeCont.length
+    document.getElementById('quantCont').innerHTML = quantContato;
 }
